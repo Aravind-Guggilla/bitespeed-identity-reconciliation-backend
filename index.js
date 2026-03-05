@@ -10,6 +10,10 @@ app.use(express.json())
 
 let db = null
 
+const PORT = process.env.PORT || 3000
+
+
+
 // Intialize DB and start server
 const initializeDbAndServer = async () => {
   try {
@@ -18,8 +22,8 @@ const initializeDbAndServer = async () => {
       driver: sqlite3.Database,
     })
 
-    app.listen(3000, () => {
-      console.log('Server Running at http://localhost:3000')
+    app.listen(PORT, () => {
+      console.log(`Server Running at ${PORT}`)
     })
   } catch (error) {
     console.log(`DB Error: ${error.message}`)
