@@ -14,7 +14,7 @@ POST /identify
 
 Example:
 
-POST https://bitespeed-identity-reconciliation-backend.onrender.com/
+POST https://bitespeed-identity-reconciliation-backend.onrender.com/identify
 
 Request Body
 
