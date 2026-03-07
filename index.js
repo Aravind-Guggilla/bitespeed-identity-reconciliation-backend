@@ -25,8 +25,8 @@ const initializeDbAndServer = async () => {
     app.listen(PORT, () => {
       console.log(`Server Running at ${PORT}`)
     })
-  } catch (error) {
-    console.log(`DB Error: ${error.message}`)
+  } catch (e) {
+    console.log(`DB Error: ${e.message}`)
     process.exit(1)
   }
 }
@@ -165,10 +165,10 @@ app.post('/identify', async (request, response) => {
     // Fetch all linked contacts
 
     const linkedContactsQuery = `
-    select * from 
-      contact
-    where id = ${primary.id}
-      or linked_id = ${primary.id};
+    SELECT * FROM 
+      contct
+    WHERE id = ${primary.id}
+      OR linked_id = ${primary.id};
   `
 
     const contacts = await db.all(linkedContactsQuery)
